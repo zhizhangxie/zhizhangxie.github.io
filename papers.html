@@ -1,177 +1,281 @@
-  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-
-    <meta content="text/html; charset=windows-1252"
-      http-equiv="Content-Type">
-    <title>Papers</title>
-    <style>
-      body {
-        font-family: 'Times New Roman', serif; 
-      }
-      li{
-       margin: 16px 0;
-        }
-      </style>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zhizhang Xie — Papers</title>
   
-<br> 
-<br>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <span style="font-size: 22px;"> &nbsp;&nbsp;&nbsp; <b> Papers</b> </span>   
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&display=swap" rel="stylesheet">
 
-    <ol>
-        
+  <style>
+    :root{
+      --tab-opsz: 36;
+      --text-opsz: 20;
+    }
+    html,body{height:100%;}
+    body{
+      font-family: "Newsreader", serif;
+      color:#111827;
+      background:#ffffff;
+      font-size:1.3rem;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Brand (even thinner and smaller) */
+    .brand{
+      font-variation-settings: "opsz" 48, "wght" 380;
+      font-size:2rem;
+      line-height:1;
+      letter-spacing: .01em;
+    }
+
+    /* Tabs (smaller font size) */
+    .tab-link{
+      font-variation-settings: "opsz" var(--tab-opsz), "wght" 250;
+      font-size:1.2rem;
+      letter-spacing:.02em;
+    }
+
+    /* Body text tuned slightly heavier for readability */
+    p, li {
+      font-variation-settings: "opsz" var(--text-opsz), "wght" 350;
+      font-size:1.3rem;
+    }
+    h2{
+      font-variation-settings: "opsz" 30, "wght" 350;
+      font-size:1.5rem;
+      margin-bottom:.5rem;
+    }
+
+    /* Mobile dropdown visual tweak */
+    .mobile-menu {
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    /* Increased space between navigation and main content */
+    main {
+      padding-top: 3rem;
+    }
+    
+    /* Content styling */
+    .content-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .content-list li {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      text-indent: -2rem;
+      position: relative;
+    }
+    .content-list li:before {
+      content: "—";
+      padding-right: 1rem;
+      color: #888;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Styling for the new ordered list */
+    .publication-list {
+      list-style-type: decimal;
+      padding-left: 2rem; /* Standard indentation for ordered list */
+      margin-left: 1rem; /* Adjust margin to align with content */
+    }
+    .publication-list li {
+      font-size: 1.2rem; /* Reduced font size for list items */
+      margin-bottom: 0.8rem; /* Space between list items */
+      font-variation-settings: "opsz" 18, "wght" 350; /* Adjust Newsreader optical sizing */
+    }
+    .publication-list li a {
+      color: #1d4ed8; /* Blue color for links */
+      text-decoration: none; /* No underline by default */
+    }
+    .publication-list li a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  
+  <header class="relative z-20 bg-white border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-between h-20">
+        <div class="">
+          <a href="index.html" class="brand inline-block hover:opacity-90">Zhizhang Xie</a>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-8">
+            <li><a href="index.html" class="tab-link text-gray-800 hover:text-blue-700">Home</a></li>
+            <li><a href="cv.html" class="tab-link text-gray-800 hover:text-blue-700">CV</a></li>
+            <li><a href="papers.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">Papers</a></li>
+            <li><a href="teaching.html" class="tab-link text-gray-800 hover:text-blue-700">Teaching</a></li>
+            <li><a href="conferences.html" class="tab-link text-gray-800 hover:text-blue-700">Conferences &amp; Seminars</a></li>
+            <li><a href="outreach.html" class="tab-link text-gray-800 hover:text-blue-700">Outreach</a></li>
+          </ul>
+        </nav>
+
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-2xl leading-none text-gray-800 focus:outline-none" title="Toggle menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="tab-link text-gray-800 hover:text-blue-700">Home</a>
+        <a href="cv.html" class="tab-link text-gray-800 hover:text-blue-700">CV</a>
+        <a href="papers.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">Papers</a>
+        <a href="teaching.html" class="tab-link text-gray-800 hover:text-blue-700">Teaching</a>
+        <a href="conferences.html" class="tab-link text-gray-800 hover:text-blue-700">Conferences &amp; Seminars</a>
+        <a href="outreach.html" class="tab-link text-gray-800 hover:text-blue-700">Outreach</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-2xl mb-8">Publications</h2>
       
-      <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a>, <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a> and <a href="https://sites.google.com/view/bozhumath/home">B. Zhu</a>) <a href="      https://arxiv.org/abs/2411.15070"> &ell;<sup>p</sup>-coarse Baum--Connes conjecture for &ell;<sup>q</sup>-coarse embeddable spaces </a> </big></li>
+      <div class="space-y-10">
+        <ol class="publication-list">
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a>, <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a> and <a href="https://sites.google.com/view/bozhumath/home" class="text-blue-700 hover:underline">B. Zhu</a>) <a href="https://arxiv.org/abs/2411.15070" class="text-blue-700 hover:underline"> &ell;<sup>p</sup>-coarse Baum--Connes conjecture for &ell;<sup>q</sup>-coarse embeddable spaces </a> </li>
      
-      <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a>) <a href="https://arxiv.org/abs/2407.21312"> Scalar curvature rigidity of spheres with subsets removed and L<sup>&infin;</sup> metrics</a> </big></li>
-         
-      <li><big> (With <a href="https://simonececchini.org/"> S. Cecchini</a>, <a href="https://jinminwang.github.io/"> J. Wang</a> and <a href="https://sites.google.com/view/bozhumath/home">B. Zhu</a>) <a href="https://arxiv.org/abs/2402.12633">  Scalar curvature rigidity of the four-dimensional sphere
-      </a> </big></li> 
-      
-
-
-      <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a>, <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a> and <a href="https://sites.google.com/view/bozhumath/home">B. Zhu</a>) <a href="https://arxiv.org/abs/2311.15347">  Filling Radius, Quantitative K-theory and Positive Scalar Curvature </a> </big></li> 
-
-      <li><big> (With G. Tian and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2310.00379"> On the relative Novikov conjecture for coarsely embeddable groups
-      </a> </big></li>
-        
-      <li><big> (With S. Gong, <a href="https://scholar.google.com/citations?user=WAeYdGwAAAAJ&hl=en"> J. Wu </a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2310.01219"> The Novikov conjecture, the group of diffeomorphisms and continuous fields of Hilbert-Hadamard spaces </a> </big></li>
-         
-      
-      
-
-      <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a>) <a href="https://arxiv.org/abs/2303.13492"> Dihedral rigidity for submanifolds of warped product manifolds</a> </big></li>
-
-      
-      <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a>) <a href="https://arxiv.org/abs/2203.09511"> On Gromov's flat corner domination conjecture and Stoker's conjecture </a> </big></li>
-
-
-      
-
-       
-
-      <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2112.01510"> On Gromov's dihedral extremality and rigidity conjectures </a> </big></li>
-
-      <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a>) <a href="https://arxiv.org/abs/2306.05413"> Scalar curvature rigidity of degenerate warped product spaces</a>,  <em> Trans. Amer. Math. Soc. Ser.  </em>  B  <b> 12 </b> (2025), 1-37.</big></li>
-         
-         
-      <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a>, <a href="https://sites.google.com/view/bozhumath/home"> B. Zhu </a> and <a href="https://sites.google.com/view/xingyuzhu/home">X. Zhu</a>) <a href="https://arxiv.org/abs/2212.10416"> Positive scalar curvature meets Ricci limit spaces</a>, <em> Manuscripta Math.</em> <b>175</b> (2024), no. 3-4, 943-969. </big></li>
-
-      <li><big> (With <a href="http://www.math.uchicago.edu/~shmuel/"> S. Weinberger</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2112.13897"> On Gromov's compactness question regarding positive scalar curvature</a>,  <em>Ann. K-Theory</em> <b>9</b> (2024), no. 4, 583-612. </big></li>
-        
-      <li><big> (With <a href="https://sites.google.com/view/jintaodengspersonalpage/home"> J. Deng</a>, G. Tian and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2110.10859#"> K-theory of relative group C*-algebras and the relative Novikov conjecture</a>,  <em> Math. Z.</em> <b>306</b> (2024), no.3, Paper No. 45, 38 pp. </big></li>
-        
-        
-         <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2105.12054"> A proof of Gromov's cube inequality on scalar curvature</a>, <em> J. Differential Geom. </em> Vol. 128, No. 3 (2024), pp. 1285-1300.</big></li>
-
-         
-       
-         
-         
-         
-
-         <li><big> (With <a href="https://jinminwang.github.io/"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2101.11584"> Decay of scalar curvature on uniformly contractible manifolds with finite asymptotic dimension</a>, <em> Comm. Pure Appl. Math. </em> <b> 77
-         </b> (2024), no. 1, 372&ndash;440. </big></li> 
-
-         <li><big>(with Hongzhi Liu and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2411.16716"> Equivalence of different definitions of higher  &rho; invariants</a>, <em> Scientia Sinica  Mathematica</em>,  Volume <b> 53 </b>, Issue 12: 1713 (2023) </big></li>
-
-
-         <li><big>(with X. Chen, <a href="https://jinminwang.github.io/"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/1901.02378"> Delocalized eta invariants, cyclic cohomology and higher rho invariants</a>, <em> Ann. K-Theory</em>  <b>8</b> (2023), no. 4, 531&ndash;608. </big></li>
-
-
-         <li> <big> (with <a href="https://jinminwang.github.io/"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2206.09913"> &#8467;<sup>1</sup> higher index, &#8467;<sup>1</sup> higher rho invariant and cyclic cohomology</a>, <em> Cyclic Cohomology at 40: Achievements and Future Prospects</em>, Proc. Sympos. Pure Math., <b>Vol. 105</b>, 535&ndash;579, 2023</big></li>
-
-         
-         <li><big> <a href="https://arxiv.org/abs/2103.14498"> A quantitative relative index theorem and Gromov's conjectures on positive scalar curvature</a>,  <em> Journal of Noncommutative Geometry </em>  <b>17</b> (2023), no. 2, 609&ndash;662. </big></li>
-
-
-
-         <li><big> (With <a href="https://ougoah.github.io">H. Guo</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2010.01749"> Quantitative K-theory, positive scalar curvature, and band width</a>,  <em> Perspectives on Scalar Curvature (edited by Gromov and Lawson)</em> <b>Vol. 2</b>, 763&ndash;798, World Sci. Publ., 2023</big></li>  
-
-         <li><big> (With  <a href="https://jinminwang.github.io/"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2003.03401"> Approximations of delocalized eta invariants by their finite analogues</a>, <em>L'Enseignement math&eacute;matique</em>, <b>69</b> (2023), no. 1-2, 51&ndash;91. </big></li>
-
-         <li><big>(with <a href="https://ougoah.github.io">H. Guo</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/1905.12299"> A Lichnerowicz vanishing theorem for the maximal Roe algebra</a>,   <em> Math. Ann. </em> <b>385</b> (2023), no. 1-2, 717&ndash;743.  </big></li>
-
-         <li><big>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a> and  <a href="https://www.rzeidler.eu">R. Zeidler</a>) <a href="https://arxiv.org/abs/1712.03722"> On the range of the relative higher index and the higher rho-invariant for positive scalar curvature</a>, <em> Adv. Math. </em>  <b>390 </b> (2021), Paper No. 107897, 24 pp  </big></li>
-
-         <li><big> (With <a href="https://ougoah.github.io">H. Guo</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/2005.01933"> Functoriality for higher rho invariants of elliptic operators</a>,    <em>J. Funct. Anal. </em> <b> 280 </b> (2021), no. 10, Paper No. 108966, 36 pp </big></li>
-        
-         <li><big>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/1805.07617"> Delocalized eta invariants, algebraicity, and K-theory of group C*-algebras</a>, <em> Int. Math. Res. Not. IMRN</em>,  (2021), no. 15, 11731&ndash;11766.  </big></li>
-
-         
-         <li><big>(with <a href="http://www.math.uchicago.edu/~shmuel/"> S. Weinberger</a>  and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/1608.03661"> Additivity of higher rho invariants and nonrigidity of topological manifolds</a>, <em> Comm. Pure Appl. Math. </em> <b> 74 </b> (2021), no. 1, 3&ndash;113.  </big></li>
-        
-
-         <li><big>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a 
-          href="https://arxiv.org/abs/1905.12632">  Higher Invariants in Noncommutative Geometry</a> - <small> On the Occasion of Alain Connes' 70th Birthday, </small>     <em> Advances in Noncommutative Geometry,   </em> Springer, 2019 
-      </big></li>
-
-
-         <li><big>(with <a href="http://spot.colorado.edu/%7Egorokhov/">A. Gorokhovsky</a>) <a href="https://arxiv.org/abs/1705.04147">Fibrations and higher products in cohomology</a>, <em>Journal of Topology and Analysis</em>, <b> 11 </b> (2019), no. 1, 135&ndash;147. </big> </li>
-
-         <li><big>(with <a href="http://spot.colorado.edu/%7Egorokhov/">A. Gorokhovsky</a> and <a
-          href="http://www.math.sunysb.edu/%7Edennis/">D. Sullivan</a>)&nbsp;
-         <a href="https://arxiv.org/abs/1704.04308"> Generalized Euler classes, differential forms and commutative DGAs</a>, <em>Journal of Topology and Analysis,</em>  <b> 11 </b> (2019), no. 1, 109&ndash;118.  </big></li>
-
-         <li><big>(with <a href="http://www.personal.psu.edu/ndh2/math/Home.html">N. Higson</a> ) <a href="Higher signatures of Witt spaces.pdf"> Higher signatures on Witt spaces</a> </big></li>    
-
-         <li><big>(with <a href="http://www.personal.psu.edu/ndh2/math/Home.html">N. Higson</a> and <a href="http://www.uni-math.gwdg.de/schick/">T. Schick</a>) <a href="https://arxiv.org/abs/1710.02090"> On C*-Algebraic Higher Signatures and an Invariance Theorem in Codimension Two</a>, <em>Geom. Topol.</em> <b> 22 </b>  (2018) no.6, 3671&ndash;3699</big></li>
-
-
-         <li><big>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/1310.1136"> Higher rho invariants and the moduli space of positive scalar curvature metrics</a>, <em>Advances in Mathematics</em> <b> 307</b>  (2016), 1046&ndash;1069</big></li>
-
-   
-       <li><big>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a
-        href="NCG of discrete groups.pdf">  Noncommutative Geometry of Discrete Groups</a>,  <em>Introduction to modern mathematics, </em> 425 - 432, Adv. Lect. Math. (ALM) <b> 33</b>,  2015. 
-       </big></li> 
-
-       <li><big>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a
-      href="https://arxiv.org/abs/1302.4418">Positive
-      scalar curvature, higher rho invariants and localization
-      algebras</a>, <em>Advances in Mathematics</em>  <b>262</b> (2014),  823&ndash;866.  <br>
-       </big></li>
-
-         <li><big>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en">G. Yu</a>) <a href="https://arxiv.org/abs/1204.3664">A relative higher index theorem, diffeomorphisms and positive scalar curvature</a>,
-          <em>Advances in Mathematics</em>, <b>250</b> (2014),  35&ndash;73. </big></li>
-
-         <li><big><a href="http://arxiv.org/abs/1011.0721">The odd
-          dimensional analogue of a theorem of Getzler and Wu</a>, 
-        <cite>Journal of Noncommutative Geometry,</cite> <b>7</b> (2013), no. 3, 647&ndash;676.  </big></li>
-      
-        <li><big><a href="https://arxiv.org/abs/1001.4822">Relative index
-          pairing and odd index theorem for even dimensional manifolds</a>,
-        <cite>Journal of Functional Analysis</cite>, <b>260</b> (2011), no. 7, 2064&ndash;2085
-      </big></li>
-      </ol>
-    <br> 
-
-
-
-
-    <span style="font-size: 22px;"> &nbsp;&nbsp;&nbsp; <b> Preprints</b> </span>   
-    <ul>
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a>) <a href="https://arxiv.org/abs/2407.21312" class="text-blue-700 hover:underline"> Scalar curvature rigidity of spheres with subsets removed and L<sup>&infin;</sup> metrics</a> </li>
+             
+          <li> (With <a href="https://simonececchini.org/" class="text-blue-700 hover:underline"> S. Cecchini</a>, <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a> and <a href="https://sites.google.com/view/bozhumath/home" class="text-blue-700 hover:underline">B. Zhu</a>) <a href="https://arxiv.org/abs/2402.12633" class="text-blue-700 hover:underline">  Scalar curvature rigidity of the four-dimensional sphere
+          </a> </li> 
+          
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a>, <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a> and <a href="https://sites.google.com/view/bozhumath/home" class="text-blue-700 hover:underline">B. Zhu</a>) <a href="https://arxiv.org/abs/2311.15347" class="text-blue-700 hover:underline">  Filling Radius, Quantitative K-theory and Positive Scalar Curvature </a> </li> 
     
-    <li> <big> (with J. Deng and G. Yu) Novikov conjecture for groups generated by coarsely embeddable groups under extensions and direct limits </big></li>
-  
+          <li> (With G. Tian and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2310.00379" class="text-blue-700 hover:underline"> On the relative Novikov conjecture for coarsely embeddable groups
+          </a> </li>
+            
+          <li> (With S. Gong, <a href="https://scholar.google.com/citations?user=WAeYdGwAAAAJ&hl=en" class="text-blue-700 hover:underline"> J. Wu </a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2310.01219" class="text-blue-700 hover:underline"> The Novikov conjecture, the group of diffeomorphisms and continuous fields of Hilbert-Hadamard spaces </a> </li>
+             
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a>) <a href="https://arxiv.org/abs/2303.13492" class="text-blue-700 hover:underline"> Dihedral rigidity for submanifolds of warped product manifolds</a> </li>
     
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a>) <a href="https://arxiv.org/abs/2203.09511" class="text-blue-700 hover:underline"> On Gromov's flat corner domination conjecture and Stoker's conjecture </a> </li>
     
-    </ul>
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2112.01510" class="text-blue-700 hover:underline"> On Gromov's dihedral extremality and rigidity conjectures </a> </li>
+    
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a>) <a href="https://arxiv.org/abs/2306.05413" class="text-blue-700 hover:underline"> Scalar curvature rigidity of degenerate warped product spaces</a>,  <em> Trans. Amer. Math. Soc. Ser.  </em>  B  <b> 12 </b> (2025), 1-37.</li>
+             
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a>, <a href="https://sites.google.com/view/bozhumath/home" class="text-blue-700 hover:underline"> B. Zhu </a> and <a href="https://sites.google.com/view/xingyuzhu/home" class="text-blue-700 hover:underline">X. Zhu</a>) <a href="https://arxiv.org/abs/2212.10416" class="text-blue-700 hover:underline"> Positive scalar curvature meets Ricci limit spaces</a>, <em> Manuscripta Math.</em> <b>175</b> (2024), no. 3-4, 943-969. </li>
+    
+          <li> (With <a href="http://www.math.uchicago.edu/~shmuel/" class="text-blue-700 hover:underline"> S. Weinberger</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2112.13897" class="text-blue-700 hover:underline"> On Gromov's compactness question regarding positive scalar curvature</a>,  <em>Ann. K-Theory</em> <b>9</b> (2024), no. 4, 583-612. </li>
+            
+          <li> (With <a href="https://sites.google.com/view/jintaodengspersonalpage/home" class="text-blue-700 hover:underline"> J. Deng</a>, G. Tian and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2110.10859#" class="text-blue-700 hover:underline"> K-theory of relative group C*-algebras and the relative Novikov conjecture</a>,  <em> Math. Z.</em> <b>306</b> (2024), no.3, Paper No. 45, 38 pp. </li>
+            
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2105.12054" class="text-blue-700 hover:underline"> A proof of Gromov's cube inequality on scalar curvature</a>, <em> J. Differential Geom. </em> Vol. 128, No. 3 (2024), pp. 1285-1300.</li>
+    
+          <li> (With <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2101.11584" class="text-blue-700 hover:underline"> Decay of scalar curvature on uniformly contractible manifolds with finite asymptotic dimension</a>, <em> Comm. Pure Appl. Math. </em> <b> 77
+             </b> (2024), no. 1, 372&ndash;440. </li> 
+    
+          <li>(with Hongzhi Liu and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2411.16716" class="text-blue-700 hover:underline"> Equivalence of different definitions of higher  &rho; invariants</a>, <em> Scientia Sinica  Mathematica</em>,  Volume <b> 53 </b>, Issue 12: 1713 (2023) </li>
+    
+          <li>(with X. Chen, <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/1901.02378" class="text-blue-700 hover:underline"> Delocalized eta invariants, cyclic cohomology and higher rho invariants</a>, <em> Ann. K-Theory</em>  <b>8</b> (2023), no. 4, 531&ndash;608. </li>
+    
+          <li> (with <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2206.09913" class="text-blue-700 hover:underline"> &#8467;<sup>1</sup> higher index, &#8467;<sup>1</sup> higher rho invariant and cyclic cohomology</a>, <em> Cyclic Cohomology at 40: Achievements and Future Prospects</em>, Proc. Sympos. Pure Math., <b>Vol. 105</b>, 535&ndash;579, 2023</li>
+    
+          <li><a href="https://arxiv.org/abs/2103.14498" class="text-blue-700 hover:underline"> A quantitative relative index theorem and Gromov's conjectures on positive scalar curvature</a>,  <em> Journal of Noncommutative Geometry </em>  <b>17</b> (2023), no. 2, 609&ndash;662. </li>
+    
+          <li> (With <a href="https://ougoah.github.io" class="text-blue-700 hover:underline">H. Guo</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2010.01749" class="text-blue-700 hover:underline"> Quantitative K-theory, positive scalar curvature, and band width</a>,  <em> Perspectives on Scalar Curvature (edited by Gromov and Lawson)</em> <b>Vol. 2</b>, 763&ndash;798, World Sci. Publ., 2023</li>  
+    
+          <li> (With  <a href="https://jinminwang.github.io/" class="text-blue-700 hover:underline"> J. Wang</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2003.03401" class="text-blue-700 hover:underline"> Approximations of delocalized eta invariants by their finite analogues</a>, <em>L'Enseignement math&eacute;matique</em>, <b>69</b> (2023), no. 1-2, 51&ndash;91. </li>
+    
+          <li>(with <a href="https://ougoah.github.io" class="text-blue-700 hover:underline">H. Guo</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/1905.12299" class="text-blue-700 hover:underline"> A Lichnerowicz vanishing theorem for the maximal Roe algebra</a>,   <em> Math. Ann. </em> <b>385</b> (2023), no. 1-2, 717&ndash;743.  </li>
+    
+          <li>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a> and  <a href="https://www.rzeidler.eu" class="text-blue-700 hover:underline">R. Zeidler</a>) <a href="https://arxiv.org/abs/1712.03722" class="text-blue-700 hover:underline"> On the range of the relative higher index and the higher rho-invariant for positive scalar curvature</a>, <em> Adv. Math. </em>  <b>390 </b> (2021), Paper No. 107897, 24 pp  </li>
+    
+          <li> (With <a href="https://ougoah.github.io" class="text-blue-700 hover:underline">H. Guo</a> and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/2005.01933" class="text-blue-700 hover:underline"> Functoriality for higher rho invariants of elliptic operators</a>,    <em>J. Funct. Anal. </em> <b> 280 </b> (2021), no. 10, Paper No. 108966, 36 pp </li>
+            
+          <li>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a 
+            href="https://arxiv.org/abs/1805.07617" class="text-blue-700 hover:underline"> Delocalized eta invariants, algebraicity, and K-theory of group C*-algebras</a>, <em> Int. Math. Res. Not. IMRN</em>,  (2021), no. 15, 11731&ndash;11766.  </li>
+    
+          <li>(with <a href="http://www.math.uchicago.edu/~shmuel/" class="text-blue-700 hover:underline"> S. Weinberger</a>  and <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/1608.03661" class="text-blue-700 hover:underline"> Additivity of higher rho invariants and nonrigidity of topological manifolds</a>, <em> Comm. Pure Appl. Math. </em> <b> 74 </b> (2021), no. 1, 3&ndash;113.  </li>
+            
+          <li>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a 
+              href="https://arxiv.org/abs/1905.12632" class="text-blue-700 hover:underline">  Higher Invariants in Noncommutative Geometry</a> - <small> On the Occasion of Alain Connes' 70th Birthday, </small>     <em> Advances in Noncommutative Geometry,   </em> Springer, 2019 
+          </li>
+    
+          <li>(with <a href="http://spot.colorado.edu/%7Egorokhov/" class="text-blue-700 hover:underline">A. Gorokhovsky</a>) <a href="https://arxiv.org/abs/1705.04147" class="text-blue-700 hover:underline">Fibrations and higher products in cohomology</a>, <em>Journal of Topology and Analysis</em>, <b> 11 </b> (2019), no. 1, 135&ndash;147. </li>
+    
+          <li>(with <a href="http://spot.colorado.edu/%7Egorokhov/" class="text-blue-700 hover:underline">A. Gorokhovsky</a> and <a
+              href="http://www.math.sunysb.edu/%7Edennis/" class="text-blue-700 hover:underline">D. Sullivan</a>)&nbsp;
+             <a href="https://arxiv.org/abs/1704.04308" class="text-blue-700 hover:underline"> Generalized Euler classes, differential forms and commutative DGAs</a>, <em>Journal of Topology and Analysis,</em>  <b> 11 </b> (2019), no. 1, 109&ndash;118.  </li>
+    
+          <li>(with <a href="http://www.personal.psu.edu/ndh2/math/Home.html" class="text-blue-700 hover:underline">N. Higson</a> ) <a href="Higher signatures of Witt spaces.pdf" class="text-blue-700 hover:underline"> Higher signatures on Witt spaces</a> </li>    
+    
+          <li>(with <a href="http://www.personal.psu.edu/ndh2/math/Home.html" class="text-blue-700 hover:underline">N. Higson</a> and <a href="http://www.uni-math.gwdg.de/schick/" class="text-blue-700 hover:underline">T. Schick</a>) <a href="https://arxiv.org/abs/1710.02090" class="text-blue-700 hover:underline"> On C*-Algebraic Higher Signatures and an Invariance Theorem in Codimension Two</a>, <em>Geom. Topol.</em> <b> 22 </b>  (2018) no.6, 3671&ndash;3699</li>
+    
+          <li>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/1310.1136" class="text-blue-700 hover:underline"> Higher rho invariants and the moduli space of positive scalar curvature metrics</a>, <em>Advances in Mathematics</em> <b> 307</b>  (2016), 1046&ndash;1069</li>
+    
+          <li>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a
+            href="NCG of discrete groups.pdf" class="text-blue-700 hover:underline">  Noncommutative Geometry of Discrete Groups</a>,  <em>Introduction to modern mathematics, </em> 425 - 432, Adv. Lect. Math. (ALM) <b> 33</b>,  2015. 
+           </li> 
+    
+           <li>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a
+          href="https://arxiv.org/abs/1302.4418" class="text-blue-700 hover:underline">Positive
+          scalar curvature, higher rho invariants and localization
+          algebras</a>, <em>Advances in Mathematics</em>  <b>262</b> (2014),  823&ndash;866.  <br>
+           </li>
+    
+          <li>(with <a href="https://scholar.google.com/citations?user=9BE6OdsAAAAJ&hl=en" class="text-blue-700 hover:underline">G. Yu</a>) <a href="https://arxiv.org/abs/1204.3664" class="text-blue-700 hover:underline">A relative higher index theorem, diffeomorphisms and positive scalar curvature</a>,
+              <em>Advances in Mathematics</em>, <b>250</b> (2014),  35&ndash;73. </li>
+    
+          <li><a href="http://arxiv.org/abs/1011.0721" class="text-blue-700 hover:underline">The odd
+              dimensional analogue of a theorem of Getzler and Wu</a>, 
+            <cite>Journal of Noncommutative Geometry,</cite> <b>7</b> (2013), no. 3, 647&ndash;676.  </li>
+          
+          <li><a href="https://arxiv.org/abs/1001.4822" class="text-blue-700 hover:underline">Relative index
+              pairing and odd index theorem for even dimensional manifolds</a>,
+            <cite>Journal of Functional Analysis</cite>, <b>260</b> (2011), no. 7, 2064&ndash;2085
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
 
-    <!--<font face="book antiqua"><span style="font-weight: bold;"><br>
-                <big>Survey Papers:</big></span></font><font
-      face="book antiqua"><br>
-      <h3 style="font-weight: normal;"> </h3>
-    </font>
-    <ul>
-    -->
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  </body>
+  <footer class="text-center text-sm text-gray-500 px-6 py-6 border-t border-gray-200">
+    &copy; 2025 Zhizhang Xie 
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('menu-btn');
+      const mobile = document.getElementById('mobile-menu');
+
+      function setExpanded(val){
+        btn.setAttribute('aria-expanded', String(val));
+        if(val) mobile.classList.remove('hidden');
+        else mobile.classList.add('hidden');
+      }
+
+      btn.addEventListener('click', (e) => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        setExpanded(!expanded);
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobile.classList.contains('hidden')) {
+          const isClickInside = mobile.contains(e.target) || btn.contains(e.target);
+          if (!isClickInside) setExpanded(false);
+        }
+      });
+
+      // Optional: close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setExpanded(false);
+      });
+    })();
+  </script>
+</body>
 </html>

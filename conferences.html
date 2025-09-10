@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale-1" />
+  <title>Zhizhang Xie — Conferences & Seminars</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --tab-opsz: 36;
+      --text-opsz: 20;
+    }
+    html,body{height:100%;}
+    body{
+      font-family: "Newsreader", serif;
+      color:#111827;
+      background:#ffffff;
+      font-size:1.3rem;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Brand (even thinner and smaller) */
+    .brand{
+      font-variation-settings: "opsz" 48, "wght" 380;
+      font-size:2rem;
+      line-height:1;
+      letter-spacing: .01em;
+    }
+
+    /* Tabs (smaller font size) */
+    .tab-link{
+      font-variation-settings: "opsz" var(--tab-opsz), "wght" 250;
+      font-size:1.2rem;
+      letter-spacing:.02em;
+    }
+
+    /* Body text tuned slightly heavier for readability */
+    p, li {
+      font-variation-settings: "opsz" var(--text-opsz), "wght" 350;
+      font-size:1.3rem;
+    }
+    h2{
+      font-variation-settings: "opsz" 30, "wght" 350;
+      font-size:1.5rem;
+      margin-bottom:.5rem;
+    }
+
+    /* Mobile dropdown visual tweak */
+    .mobile-menu {
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    /* Increased space between navigation and main content */
+    main {
+      padding-top: 3rem;
+    }
+    
+    /* Styling for the conference list */
+    .conference-list li {
+        font-size: 1.3rem !important; /* Set font size as requested */
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+    }
+    .conference-list big {
+        font-size: inherit; /* Ensure <big> tag doesn't override the list font size */
+    }
+    .conference-list a {
+        color: #1d4ed8; /* Blue color for links */
+        text-decoration: none;
+    }
+    .conference-list a:hover {
+        text-decoration: underline;
+    }
+    ul.styled-list {
+        list-style-type: disc; /* Use bullets for the second list */
+        padding-left: 2.5rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  
+  <header class="relative z-20 bg-white border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-between h-20">
+        <div class="">
+          <a href="index.html" class="brand inline-block hover:opacity-90">Zhizhang Xie</a>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-8">
+            <li><a href="index.html" class="tab-link text-gray-800 hover:text-blue-700">Home</a></li>
+            <li><a href="cv.html" class="tab-link text-gray-800 hover:text-blue-700">CV</a></li>
+            <li><a href="papers.html" class="tab-link text-gray-800 hover:text-blue-700">Papers</a></li>
+            <li><a href="teaching.html" class="tab-link text-gray-800 hover:text-blue-700">Teaching</a></li>
+            <li><a href="conferences.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">Conferences &amp; Seminars</a></li>
+            <li><a href="outreach.html" class="tab-link text-gray-800 hover:text-blue-700">Outreach</a></li>
+          </ul>
+        </nav>
+
+        <div class="md:hidden">
+          <button id="menu-btn"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                  class="text-2xl leading-none text-gray-800 focus:outline-none"
+                  title="Toggle menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="tab-link text-gray-800 hover:text-blue-700">Home</a>
+        <a href="cv.html" class="tab-link text-gray-800 hover:text-blue-700">CV</a>
+        <a href="papers.html" class="tab-link text-gray-800 hover:text-blue-700">Papers</a>
+        <a href="teaching.html" class="tab-link text-gray-800 hover:text-blue-700">Teaching</a>
+        <a href="conferences.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">Conferences &amp; Seminars</a>
+        <a href="outreach.html" class="tab-link text-gray-800 hover:text-blue-700">Outreach</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-2xl mb-8">Conferences & Seminars</h2>
+      
+      <div class="conference-list">
+        <ul style="list-style: none; padding-left: 0;">
+          <li><big>  <a href="https://sites.google.com/tamu.edu/ymncga/home"> MAGEC (Meeting on Analysis and noncommutative Geometry for Early Career researchers) </a>  <span style="font-size: 16px;"> (an annual workshop series) </span>  </big></li>
+          <li><big>  <a href="https://www.math.wustl.edu/~ylsong/NCG2023.php"> Noncommutative Geometry Festival </a>  <span style="font-size: 16px;"> (an annual conference series)  </span> </big></li>
+          <li><big>  <a href="https://sites.google.com/site/brazosanalysisseminar/"> Brazos Analysis Seminar</a>  <span style="font-size: 16px;"> (a regional semi-annual seminar series)  </span> </big></li>
+          <li><big>  <a href="https://artsci.tamu.edu/mathematics/news-events/conferences/texas-geometry-and-topology/index.html"> Texas Geometry and Topology Conference</a>  <span style="font-size: 16px;"> (a semi-annual conference series)  </span> </big></li>
+          <li><big>  <a href="https://tamu-seminar.github.io/noncommutative-geometry/"> Noncommutative Geometry Seminar </a>   </big></li>
+        </ul> 
+     
+        <br>
+        <br>
+
+        <ul class="styled-list">
+          <li><big>  <a href="https://sites.google.com/view/mwscv2025/home"> 2025 Midwest Several Complex Variables Conference  </a> (May 16 - 18, 2025) </big></li>
+          <li><big>  <a href="https://sites.google.com/view/brazos-analysis-seminar-202310/home"> Brazos Analysis Seminar  </a> at Baylor University (April 12 - 13, 2025) </big></li>
+          <li><big>  <a href="https://sites.google.com/view/brazosanalysisseminarf24/%E9%A6%96%E9%A1%B5"> Brazos Analysis Seminar  </a> at Houston University (November 16 - 17, 2024) </big></li>
+          <li><big>  <a href="https://www2.math.tamu.edu/conferences/tgtc/"> Texas Geometry and Topology Conference</a>  (November 8 - 10, 2024)   </big> </li>
+          <li> <big>  <a href="https://sites.google.com/tamu.edu/qtqimp/home">  Quantum Topology, Quantum Information, and Connections to Mathematical Physics </a> (May 27 - 31, 2024)    </big> </li>
+          <li><big>  <a href="https://sites.google.com/view/ymncga-2024/home"> MAGEC 2024 </a>  (March 11 - 13, 2024) </big></li>
+          <li><big>  <a href="https://faculty.tcu.edu/jcarrion/brazos-2024.html"> Brazos Analysis Seminar </a> at Texas Christian University   (March 2 - 3, 2024) </big> </li>
+          <li><big>  <a href="https://www.math.wustl.edu/~ylsong/NCG2023.php"> Noncommutative Geometry Festival 2023 </a> (June 12 - 16, 2023) </big></li>
+          <li><big>  <a href="https://sites.google.com/view/brazosanalysisseminar2023s/homee"> Brazos Analysis Seminar  </a> at Baylor University (October 21 - 22, 2023) </big></li>
+          <li><big>  <a href="https://sites.google.com/view/brazos-analyis-spring2023/home"> Brazos Analysis Seminar  </a> at Texas A&M University (April 1 - 2, 2023) </big></li>
+          <li><big>  <a href="https://sites.google.com/view/brazosanalysisseminar2022fa"> Brazos Analysis Seminar  </a> at University of Houston (October 1 - 2, 2022) </big></li>
+          <li><big>  <a href="https://sites.google.com/tamu.edu/ymncga/home"> MAGEC 2022 </a>  (August 15 - 18, 2022) </big></li>
+          <li><big>  <a href="https://www.math.wustl.edu/~xtang/Hypoelliptic.html"> Online Seminar on the Hypoelliptic Laplacian and Noncommutative Geometry </a>   </big></li>
+          <li><big> <a href="https://villadeleyvaschool.uniandes.edu.co/index.html"> Winter School on Noncommutative Geometry and Geometric Analysis  </a> (December 5 - 16, 2022) </big></li>
+          <li><big> Great Plains Operator Theory Symposium 2019 (May 28 - June 1, 2019) </big></li>
+          <li><big>  Noncommutative geometry and index theory for group actions and singular spaces (May 21 - 25, 2018) </big> </li>
+          <li><big> Special session on Noncommutative Geometry at International Workshop on Operator Theory and its Applications (July 23 - 27, 2018) </big> </li>
+          <li><big> Special session on Noncommutative Geometry and Quantization, Mathematical Congress of the Americas (July 24 - 28, 2017)    </big></li>
+          <li><big> Noncommutative Geometry conference in Honor of Alain Connes' 70th Birthday, Shanghai University (May 23 - April 7th, 2017)</big></li>
+          <li><big>Noncommutative Geometry Festival 2015 at Ohio State University (May 3 - 5, 2015) </big> </li>
+          <li><big> Noncommutative Geometry Festival at Texas A&M University (April 30 - May 3, 2014) </big></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 px-6 py-6 border-t border-gray-200">
+    &copy; 2025 Zhizhang Xie 
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('menu-btn');
+      const mobile = document.getElementById('mobile-menu');
+
+      function setExpanded(val){
+        btn.setAttribute('aria-expanded', String(val));
+        if(val) mobile.classList.remove('hidden');
+        else mobile.classList.add('hidden');
+      }
+
+      btn.addEventListener('click', (e) => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        setExpanded(!expanded);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!mobile.classList.contains('hidden')) {
+          const isClickInside = mobile.contains(e.target) || btn.contains(e.target);
+          if (!isClickInside) setExpanded(false);
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setExpanded(false);
+      });
+    })();
+  </script>
+</body>
+</html>

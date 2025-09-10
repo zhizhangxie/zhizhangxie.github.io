@@ -1,87 +1,219 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>   
-     <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zhizhang Xie — Teaching</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <meta content="text/html; charset=windows-1252"
-      http-equiv="Content-Type">
-    <title>Teaching</title>
-    <style>
-      body {
-        font-family: 'Times New Roman', serif; 
-      }
-      li{
-       margin: 12px 0;
-        }
-      </style>
-  </head>
-  <body>
-   
-    <br>
-    <span style="font-size: 22px;"> &nbsp;&nbsp;&nbsp; &nbsp;<b>Teaching: </b> </span> 
-         <ul> 
-          <li>   Fall 2025: MATH 623 - Differential Geometry II 
-          </li>
-          <li>   Spring 2025: MATH 410 - Multivariate Real Analysis 
-          </li>
-          <li>   Spring 2025: MATH 622 - Differential Geometry I
-          </li> 
-          <li>   Fall 2024: MATH 663 - Index theory for spaces with singularities and its applications
-          </li>
-          <li>   Spring 2024:   Math 656 -  Functional Analysis  (II)   </li>
-          <li>   Fall 2023:   Math 409 -  Advanced Calculus (I)   </li>
-         <li> Spring 2023:  Math 637 - Topology (II)  </li>  
-         <li> Fall 2022: Math 643 - Algebraic Topology (I) </li>
-         <li> Spring 2022:  Math 656 - Functional Analysis II  
-        </li>
-         <li>  Spring 2022:  Math 689 - Topics Class on Topological Insulators II
-        </li>
-         <li>  Fall 2021:  Math 636 - Topology I 
-        </li>          
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&display=swap" rel="stylesheet">
 
-          <li>   Spring 2021:   Math 644 - Algebraic Topology (II)   </li>
-           <li>  Fall 2020:   Math 643 - Algebraic Topology (I)  </li>
-          <li>  Spring 2020:  Math 436 - Introduction to Topology </li>
-     <li>  Spring 2020:  Math 622 - Differential Geometry (I) </li>
-           <li>  Spring 2019:   Math 409 - Advanced Calculus (I) </li>
-     <li>  Spring 2019:  Math 644 - Algebraic Topology (II) </li>
+  <style>
+    :root{
+      --tab-opsz: 36;
+      --text-opsz: 20;
+    }
+    html,body{height:100%;}
+    body{
+      font-family: "Newsreader", serif;
+      color:#111827;
+      background:#ffffff;
+      font-size:1.3rem;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-          <li>  Fall 2018:  Math 643 - Algebraic Topology (I)
-            </li> 
+    /* Brand (even thinner and smaller) */
+    .brand{
+      font-variation-settings: "opsz" 48, "wght" 380;
+      font-size:2rem;
+      line-height:1;
+      letter-spacing: .01em;
+    }
 
-          <li>  Spring 2018:  Math 409 - Advanced Calculus (I)
-            </li>  
+    /* Tabs (smaller font size) */
+    .tab-link{
+      font-variation-settings: "opsz" var(--tab-opsz), "wght" 250;
+      font-size:1.2rem;
+      letter-spacing:.02em;
+    }
 
-      <li> Spring 2018:  Math 637 - Topology (II)
-            </li>
+    /* Body text tuned slightly heavier for readability */
+    p, li {
+      font-variation-settings: "opsz" var(--text-opsz), "wght" 350;
+      font-size:1.3rem;
+    }
+    h2{
+      font-variation-settings: "opsz" 30, "wght" 350;
+      font-size:1.5rem;
+      margin-bottom:.5rem;
+    }
 
-          <li>Fall 2017: &nbsp;    Math 409 - Advanced Calculus (I) </li>  
+    /* Mobile dropdown visual tweak */
+    .mobile-menu {
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
 
-        <li>Spring 2017: &nbsp;    Math 644 - Algebraic Topology (II) 
-            </li>   
-        <li>Fall 2016:&nbsp;   Math 643 - Algebraic Topology (I)
-            </li>       
-             <li>Spring 2016: &nbsp;   Math 666 - Noncommutative Geometry
-            </li>   
-      <li> Fall 2015: &nbsp;   Math 251 - Engineering Mathematics III
-            </li>
-            <li> Spring 2015: &nbsp;   Math 304 - Linear Algebra 
-            </li>
-      <li> Spring 2014: &nbsp;   Math 601 - Methods of Applied Mathematics I 
-            </li>
-      <li> Fall 2013: &nbsp;   Math
-          601 - Methods of Applied Mathematics I </li>
-          
+    /* Increased space between navigation and main content */
+    main {
+      padding-top: 3rem;
+    }
+    
+    /* Content styling for default lists */
+    .content-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .content-list li {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      text-indent: -2rem;
+      position: relative;
+    }
+    .content-list li:before {
+      content: "—";
+      padding-right: 1rem;
+      color: #888;
+      position: absolute;
+      left: 0;
+    }
+    
+    /* Style for the detailed teaching list - MATCHES CONFERENCE PAGE */
+    .teaching-list {
+      list-style-type: disc;
+      padding-left: 2.5rem;
+    }
+    .teaching-list li {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .teaching-list a {
+        color: #1d4ed8;
+        text-decoration: none;
+    }
+    .teaching-list a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  
+  <header class="relative z-20 bg-white border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-between h-20">
+        <div class="">
+          <a href="index.html" class="brand inline-block hover:opacity-90">Zhizhang Xie</a>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-8">
+            <li><a href="index.html" class="tab-link text-gray-800 hover:text-blue-700">Home</a></li>
+            <li><a href="cv.html" class="tab-link text-gray-800 hover:text-blue-700">CV</a></li>
+            <li><a href="papers.html" class="tab-link text-gray-800 hover:text-blue-700">Papers</a></li>
+            <li><a href="teaching.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">Teaching</a></li>
+            <li><a href="conferences.html" class="tab-link text-gray-800 hover:text-blue-700">Conferences &amp; Seminars</a></li>
+            <li><a href="outreach.html" class="tab-link text-gray-800 hover:text-blue-700">Outreach</a></li>
+          </ul>
+        </nav>
+
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-2xl leading-none text-gray-800 focus:outline-none" title="Toggle menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
+        <a href="index.html" class="tab-link text-gray-800 hover:text-blue-700">Home</a>
+        <a href="cv.html" class="tab-link text-gray-800 hover:text-blue-700">CV</a>
+        <a href="papers.html" class="tab-link text-gray-800 hover:text-blue-700">Papers</a>
+        <a href="teaching.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">Teaching</a>
+        <a href="conferences.html" class="tab-link text-gray-800 hover:text-blue-700">Conferences &amp; Seminars</a>
+        <a href="outreach.html" class="tab-link text-gray-800 hover:text-blue-700">Outreach</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <section class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-2xl mb-8">Teaching</h2>
       
-       
-         
-          
+      <div class="space-y-10">
+        <section>
+          <ul class="teaching-list">
+            <li>Fall 2025: MATH 623 - Differential Geometry II</li>
+            <li>Spring 2025: MATH 410 - Multivariate Real Analysis</li>
+            <li>Spring 2025: MATH 622 - Differential Geometry I</li>
+            <li>Fall 2024: MATH 663 - Index theory for spaces with singularities and its applications</li>
+            <li>Spring 2024: Math 656 - Functional Analysis (II)</li>
+            <li>Fall 2023: Math 409 - Advanced Calculus (I)</li>
+            <li>Spring 2023: Math 637 - Topology (II)</li>
+            <li>Fall 2022: Math 643 - Algebraic Topology (I)</li>
+            <li>Spring 2022: Math 656 - Functional Analysis II</li>
+            <li>Spring 2022: Math 689 - Topics Class on Topological Insulators II</li>
+            <li>Fall 2021: Math 636 - Topology I</li>
+            <li>Spring 2021: Math 644 - Algebraic Topology (II)</li>
+            <li>Fall 2020: Math 643 - Algebraic Topology (I)</li>
+            <li>Spring 2020: Math 436 - Introduction to Topology</li>
+            <li>Spring 2020: Math 622 - Differential Geometry (I)</li>
+            <li>Spring 2019: Math 409 - Advanced Calculus (I)</li>
+            <li>Spring 2019: Math 644 - Algebraic Topology (II)</li>
+            <li>Fall 2018: Math 643 - Algebraic Topology (I)</li>
+            <li>Spring 2018: Math 409 - Advanced Calculus (I)</li>
+            <li>Spring 2018: Math 637 - Topology (II)</li>
+            <li>Fall 2017: Math 409 - Advanced Calculus (I)</li>
+            <li>Spring 2017: Math 644 - Algebraic Topology (II)</li>
+            <li>Fall 2016: Math 643 - Algebraic Topology (I)</li>
+            <li>Spring 2016: Math 666 - Noncommutative Geometry</li>
+            <li>Fall 2015: Math 251 - Engineering Mathematics III</li>
+            <li>Spring 2015: Math 304 - Linear Algebra</li>
+            <li>Spring 2014: Math 601 - Methods of Applied Mathematics I</li>
+            <li>Fall 2013: Math 601 - Methods of Applied Mathematics I</li>
+          </ul>
+        </section>
         
-                  
-    </ul>
+        
+      </div>
+    </section>
+  </main>
 
-   
-    <br>
-    <br>
-  </body>
+  <footer class="text-center text-sm text-gray-500 px-6 py-6 border-t border-gray-200">
+    &copy; 2025 Zhizhang Xie 
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('menu-btn');
+      const mobile = document.getElementById('mobile-menu');
+
+      function setExpanded(val){
+        btn.setAttribute('aria-expanded', String(val));
+        if(val) mobile.classList.remove('hidden');
+        else mobile.classList.add('hidden');
+      }
+
+      btn.addEventListener('click', (e) => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        setExpanded(!expanded);
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!mobile.classList.contains('hidden')) {
+          const isClickInside = mobile.contains(e.target) || btn.contains(e.target);
+          if (!isClickInside) setExpanded(false);
+        }
+      });
+
+      // Optional: close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setExpanded(false);
+      });
+    })();
+  </script>
+</body>
 </html>

@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zhizhang Xie — Outreach</title>
+  <title>Zhizhang Xie — CV</title>
   
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Newsreader (thin, Times-like; good FK Roman-like substitute) -->
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&display=swap" rel="stylesheet">
 
   <style>
@@ -19,7 +21,7 @@
       font-family: "Newsreader", serif;
       color:#111827;
       background:#ffffff;
-      font-size:1.3rem;
+      font-size:1.2rem;  /* updated */
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
@@ -37,13 +39,16 @@
       letter-spacing:.02em;
     }
 
+    /* Body text */
     p, li {
       font-variation-settings: "opsz" var(--text-opsz), "wght" 350;
-      font-size:1.3rem;
+      font-size:1.2rem;      /* updated */
+      line-height:1.55;
+      margin-bottom:0.5rem;
     }
-    h2{
+
+    h2, h3{
       font-variation-settings: "opsz" 30, "wght" 350;
-      font-size:1.5rem;
       margin-bottom:.5rem;
     }
 
@@ -51,39 +56,47 @@
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
     }
 
-    main {
-      padding-top: 3rem;
-    }
-    
     .content-list {
       list-style-type: none;
       padding: 0;
     }
     .content-list li {
-      margin-bottom: 1.2rem;
-      padding-left: 0;
-      text-indent: 0;
-      position: relative;
+      margin-bottom: 0.8rem;
+    }
+
+    .cv-download {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      background-color: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    .cv-download:hover {
+      background-color: #e5e7eb;
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
   
+  <!-- Header -->
   <header class="relative z-20 bg-white border-b border-gray-200">
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex items-center justify-between h-20">
-        <div class="">
+        <div>
           <a href="index.html" class="brand inline-block hover:opacity-90">Zhizhang Xie</a>
         </div>
 
         <nav class="hidden md:block">
           <ul class="flex items-center gap-8">
             <li><a href="index.html" class="tab-link text-gray-800 hover:text-blue-700">Home</a></li>
-            <li><a href="cv.html" class="tab-link text-gray-800 hover:text-blue-700">CV</a></li>
+            <li><a href="cv.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">CV</a></li>
             <li><a href="papers.html" class="tab-link text-gray-800 hover:text-blue-700">Papers</a></li>
             <li><a href="teaching.html" class="tab-link text-gray-800 hover:text-blue-700">Teaching</a></li>
             <li><a href="conferences.html" class="tab-link text-gray-800 hover:text-blue-700">Conferences &amp; Seminars</a></li>
-            <li><a href="outreach.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">Outreach</a></li>
+            <li><a href="outreach.html" class="tab-link text-gray-800 hover:text-blue-700">Outreach</a></li>
           </ul>
         </nav>
 
@@ -98,39 +111,62 @@
     <div id="mobile-menu" class="mobile-menu hidden md:hidden border-t border-gray-100">
       <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
         <a href="index.html" class="tab-link text-gray-800 hover:text-blue-700">Home</a>
-        <a href="cv.html" class="tab-link text-gray-800 hover:text-blue-700">CV</a>
+        <a href="cv.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">CV</a>
         <a href="papers.html" class="tab-link text-gray-800 hover:text-blue-700">Papers</a>
         <a href="teaching.html" class="tab-link text-gray-800 hover:text-blue-700">Teaching</a>
         <a href="conferences.html" class="tab-link text-gray-800 hover:text-blue-700">Conferences &amp; Seminars</a>
-        <a href="outreach.html" class="tab-link text-gray-800 font-medium hover:text-blue-700">Outreach</a>
+        <a href="outreach.html" class="tab-link text-gray-800 hover:text-blue-700">Outreach</a>
       </div>
     </div>
   </header>
 
   <main class="flex-1">
     <section class="max-w-4xl mx-auto px-6 py-16">
-      <h2 class="text-2xl mb-8">Outreach</h2>
+      <h2 class="text-2xl mb-8">Curriculum Vitae</h2>
+      
+      <!-- CV Download -->
+      <div class="mb-10 p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <p class="mb-2">Here is a PDF version of my complete CV:</p>
+        <a href="VitaXie.pdf" class="cv-download" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+      </div>
       
       <div class="space-y-10">
+        <!-- Education -->
         <section>
-          <h3 class="text-xl mb-4 border-b pb-2">PReMa</h3>
+          <h3 class="text-xl mb-4 border-b pb-2">Education</h3>
           <ul class="content-list">
-            <li>
-              <a href="https://sites.google.com/tamu.edu/suprema/home" class="text-blue-700 hover:underline">
-                Program for Research in Mathematics (for high school students)
-              </a>
-            </li>
+            <li>Ph.D. in Mathematics, Ohio State University, 2005–2011</li>
+            <li>B.S. in Mathematics, Zhejiang University, 2001–2005</li>
           </ul>
         </section>
-
+        
+        <!-- Positions -->
         <section>
-          <h3 class="text-xl mb-4 border-b pb-2">Math Circle</h3>
+          <h3 class="text-xl mb-4 border-b pb-2">Academic Positions</h3>
           <ul class="content-list">
-            <li>
-              <a href="https://sites.google.com/tamu.edu/tamu-math-circle/home" class="text-blue-700 hover:underline">
-                TAMU Math Circle
-              </a>
-            </li>
+            <li>Professor, Texas A&M University, 2023–Present</li>
+            <li>Associate Professor, Texas A&M University, 2018–2023</li>
+            <li>Assistant Professor, Texas A&M University, 2013–2018</li>
+            <li>Assistant Professor (non-tenure track), Vanderbilt University, 2011–2013</li>
+          </ul>
+        </section>
+        
+        <!-- Grants -->
+        <section>
+          <h3 class="text-xl mb-4 border-b pb-2">Grants</h3>
+          <ul class="content-list">
+            <li>NSF DMS-2247322 (PI) K-theory of Operator Algebras and Index Theory on Spaces of Singularities, 08/01/2023–07/31/2026</li>
+            <li>NSF DMS-1952693 (PI) FRG: the hypoelliptic Laplacian, noncommutative geometry and applications to representations and singular spaces, 06/01/2020–05/31/2024</li>
+            <li>NSF DMS-2400112 (PI) Collaborative Research: Conference: Brazos Analysis Seminar, 04/01/2024–03/31/2027</li>
+            <li>NSF DMS-2350508 co-PI (with A. Song (PI), Z. An, and S. Cecchini) Conference: Noncommutative Geometry and Analysis, 03/01/2024–02/28/2025</li>
+            <li>NSF DMS-2350250 co-PI (with T. Yang (PI), S. Gong, and M. Willis) Conference: Quantum Topology, Quantum Information and connections to Mathematical Physics, 05/01/2024–04/30/2025</li>
+            <li>NSF DMS-2000335 (PI), Young Mathematicians in C∗-Algebras 2020, 06/01/2020–05/31/2023</li>
+            <li>NSF DMS-1800737 (PI), K-theory of Operator Algebras and Invariants of Elliptic Operators, 07/01/2018–06/30/2022</li>
+            <li>NSF DMS-1900745, co-PI, (with K. Dykema (PI), M. Anshelevich, D. Kerr, M. Brannan) Great Plains Operator Theory Symposium 2019</li>
+            <li>NSF DMS-1800780 (PI) with G. Yu (co-PI), International Workshop on Operator Theory and its Applications 2018, 2018–2020</li>
+            <li>NSF DMS-1500823 (PI), K-Theory of Operator Algebras and Invariants of Elliptic Operators, 07/01/2015–06/30/2019</li>
+            <li>NSF DMS-1430907 co-PI, (with G. Yu (PI) and B. Cácíc), Noncommutative Geometry Festival, 2014–2015</li>
+            <li>AMS-Simons Travel Grant, 2013–2015</li>
           </ul>
         </section>
       </div>
@@ -138,32 +174,28 @@
   </main>
 
   <footer class="text-center text-sm text-gray-500 px-6 py-6 border-t border-gray-200">
-    &copy; 2025 Zhizhang Xie 
+    &copy; 2025 Zhizhang Xie
   </footer>
 
   <script>
     (function(){
       const btn = document.getElementById('menu-btn');
       const mobile = document.getElementById('mobile-menu');
-
       function setExpanded(val){
         btn.setAttribute('aria-expanded', String(val));
         if(val) mobile.classList.remove('hidden');
         else mobile.classList.add('hidden');
       }
-
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         setExpanded(!expanded);
       });
-
       document.addEventListener('click', (e) => {
         if (!mobile.classList.contains('hidden')) {
           const isClickInside = mobile.contains(e.target) || btn.contains(e.target);
           if (!isClickInside) setExpanded(false);
         }
       });
-
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') setExpanded(false);
       });
