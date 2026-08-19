@@ -7,9 +7,20 @@
   
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <script src="https://polyfill.io"></script>
-<script id="MathJax-script" async src="https://jsdelivr.net"></script>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
 
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&display=swap" rel="stylesheet">
 
